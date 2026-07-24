@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Blood Bank Management</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/BloodBankApp.styles.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <!-- Plain HTML link for Brand -->
+                <a class="navbar-brand" href="/Donor/Index">Blood Bank System</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <!-- Navigation to Donor CRUD -->
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/Donor/Index">All Donors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/Donor/Create">Register Donor</a>
+                        </li>
+
+                        <!-- Navigation to LINQ Query Features (Phase 4) -->
+                        <li class="nav-item">
+                            <a class="nav-link text-primary" href="/Donor/Filter">Filter Group</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary" href="/Donor/Recent">Recent Donors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary" href="/Donor/Stats">Donation Stats</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary" href="/Donor/TotalVolume">Total Volume</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container text-center">
+            &copy; 2026 - Blood Bank Management System - Assignment Submission
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
