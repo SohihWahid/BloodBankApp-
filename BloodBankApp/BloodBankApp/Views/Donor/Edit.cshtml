@@ -1,0 +1,47 @@
+﻿@model BloodBankApp.Models.Donor
+
+@{
+    ViewData["Title"] = "Edit Donor";
+}
+
+<h1>Edit Donor Details</h1>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div style="color:red; font-weight:bold; margin-bottom:10px;">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+<form action="/Donor/Edit" method="post">
+
+    <input type="hidden" name="DonorId" value="@Model.DonorId" />
+
+    <div style="margin-bottom:10px;">
+        <label>Full Name:</label><br />
+        <input type="text" name="FullName" value="@Model.FullName" />
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label>Blood Group:</label><br />
+        <input type="text" name="BloodGroup" value="@Model.BloodGroup" />
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label>Contact Number:</label><br />
+        <input type="text" name="ContactNo" value="@Model.ContactNo" />
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label>City:</label><br />
+        <input type="text" name="City" value="@Model.City" />
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label>Last Donation Date:</label><br />
+        <input type="date" name="LastDonationDate" value="@Model.LastDonationDate.ToString("yyyy-MM-dd")" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Donor</button>
+    <a href="/Donor/Index">Cancel</a>
+</form>

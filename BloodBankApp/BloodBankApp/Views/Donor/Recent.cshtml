@@ -1,0 +1,9 @@
+﻿@model IEnumerable<BloodBankApp.Models.Donor>
+<h1>Most Recent Donors</h1>
+<table class="table">
+    <tr><th>Name</th><th>Last Donation Date</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.FullName</td><td>@item.LastDonationDate.ToShortDateString()</td></tr>
+    }
+</table>

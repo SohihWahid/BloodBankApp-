@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Add New Donor";
+}
+
+<h1>Register New Donor</h1>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div style="color:red; font-weight:bold; margin-bottom:10px;">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+<form action="/Donor/Create" method="post">
+    <div style="margin-bottom:10px;">
+        <label>Full Name:</label><br />
+        <input type="text" name="FullName" />
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label>Blood Group:</label><br />
+        <input type="text" name="BloodGroup" placeholder="e.g. A+" />
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label>Contact Number:</label><br />
+        <input type="text" name="ContactNo" />
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label>City:</label><br />
+        <input type="text" name="City" />
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label>Last Donation Date:</label><br />
+        <input type="date" name="LastDonationDate" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Donor</button>
+    <a href="/Donor/Index">Back to List</a>
+</form>

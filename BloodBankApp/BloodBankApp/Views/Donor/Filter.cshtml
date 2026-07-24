@@ -1,0 +1,19 @@
+﻿@model IEnumerable<BloodBankApp.Models.Donor>
+<h1>Filter Donors by Blood Group</h1>
+
+<form action="/Donor/Filter" method="get">
+    <input type="text" name="bloodGroup" placeholder="Enter Blood Group (e.g. O+)" />
+    <button type="submit">Filter</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr><th>Name</th><th>Group</th><th>City</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr><td>@item.FullName</td><td>@item.BloodGroup</td><td>@item.City</td></tr>
+        }
+    </tbody>
+</table>
